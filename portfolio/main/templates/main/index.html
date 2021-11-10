@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<body id="page-top">
+    <!-- Navigation-->
+    {% include 'main/nav.html' %}
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="{% static 'assets/img/avataaars.svg' %}" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Herbert Cardozo</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Python Developer -  Software Engineer</p>
+        </div>
+    </header>
+    <!-- Skills Section-->
+    {% include 'main/skills.html' %}
+    <!-- About Section-->
+    {% include 'main/about.html' %}
+    <!-- Contact Section-->
+    {% include 'main/contact.html' %}
+    <!-- Footer-->
+    {% include 'main/footer.html' %}
+</body>
+       
+{% endblock %}
