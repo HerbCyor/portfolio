@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Skill(models.Model):
@@ -9,13 +9,14 @@ class Skill(models.Model):
         verbose_name = "Skill"
 
     name = models.CharField(max_length=20, blank=True, null=True)
-    image = models.ImageField(blank=True, null=True, upload_to="skills")
+    image = models.FileField(blank=True, null=True, upload_to="skills")
     score = models.IntegerField(default=50, blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    description = models.CharField(max_length=400, blank=True, null=True)
+    body = RichTextField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return f"{self.name}"
-
 
 class UserProfile(models.Model):
     class Meta:
@@ -24,6 +25,7 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(blank=True, null=True, upload_to="avatar")
+    title = models.CharField(max_length=200, blank=True,null=True)
     bio = models.TextField(blank=True, null=True)
     cv = models.FileField(blank=True, null=True, upload_to="cv")
 
@@ -44,3 +46,22 @@ class ContactProfile(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name}"
+
+class Media(models.Model):
+    class Meta:
+        verbose_name_plural = 'Media Files'
+        verbose_name = 'Media'
+        ordering = ['name']
+
+    image = models.ImageField(blank=True,null=True, upload_to='media')
+    url = models.URLField(blank=True,null=True)
+    name = models.CharField(max_length=200, blank=True,null=True)
+    is_image = models.BooleanField(default=True)
+
+    def save(self, *args, **kwargs):
+        if self.url:
+            self.is_image = False
+        super(Media,self).save(*args,**kwargs)
+    
+    def __str__(self) -> str:
+        return self.name
