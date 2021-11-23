@@ -6,7 +6,7 @@ from .models import Skill, UserProfile
 # Create your views here.
 def Index(request):
 
-    skills = list(Skill.objects.filter(is_active=True))
+    skills = list(Skill.objects.filter(is_active=True).order_by("id"))
     profile = UserProfile.objects.all()
     context = {"skills": skills, "profile": profile}
 
