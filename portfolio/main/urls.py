@@ -3,4 +3,6 @@ from . import views
 
 app_name = "main"
 
-urlpatterns = [path("", views.Index, name="index")]
+urlpatterns = [
+    path("", views.Index, name="index"),
+]
