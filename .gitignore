@@ -1,2 +1,31 @@
-.env
-dir_to_ignore/venv
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+media
+
+# pyenv 
+.python-version 
+
+
+# Environments 
+.env 
+.venv 
+env/ 
+venv/ 
+ENV/ 
+env.bak/ 
+venv.bak/
+
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
+
+# Installer logs 
+pip-log.txt 
+pip-delete-this-directory.txt 
