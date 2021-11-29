@@ -11,6 +11,7 @@ def Index(request):
 
     skills = list(Skill.objects.filter(is_active=True))
     profile = UserProfile.objects.all()[0]
+    skills = list(Skill.objects.filter(is_active=True).order_by("id"))
 
     if request.method == "POST":
         form = ContactForm(request.POST)

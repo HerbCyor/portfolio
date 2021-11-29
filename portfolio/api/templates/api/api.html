@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<body>
+    <h1>HERBS API OVERVIEW</h1>
+    <div class='container'>
+        <div id='list-wrapper'>
+
+        </div>
+    </div>
+    <script type='text/javascript'>
+
+        buildList()
+
+        function buildList(){
+            var wrapper = document.getElementById('list-wrapper')
+
+            var url = 'http://127.0.0.1:8000/api/skill-list/'
+
+            fetch(url)
+            .then((resp) => resp.json())
+            .then(function(data){
+                console.log('data:',data)
+
+                var list = data
+
+                for (var i in list){
+                    var item = `
+                    <div id="data-row-${i}" class="skill-wrapper flex-wrapper">
+                        <div style="flex:7">
+                            <span class="name">${list[i].name}</span><br>
+                            <br>
+                            <span class="description">${list[i].description}</span>
+                            <br>
+                            <img src="${list[i].image}" width='200' heigth='200'>
+                            ${list[i].body}
+                        </div>
+                    </div>
+                    `
+
+                    wrapper.innerHTML += item
+                }
+
+            })
+        }
+
+    </script>
+</body>
+{% endblock %}
