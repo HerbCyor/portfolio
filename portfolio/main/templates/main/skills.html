@@ -14,12 +14,12 @@
         <div class="row justify-content-center">
             <!-- Portfolio Item 1-->
             {% for skill in skills %}
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col-md-6 col-lg-3 mb-5">
                 <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal{{skill.id}}">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" src="{{skill.image.url}}" alt="..." />
+                    <img class="img-fluid portfolio-img" src="{{skill.image.url}}" alt="..." />
                 </div>
             </div>
             {% endfor %}
@@ -35,7 +35,7 @@
             <div class="modal-body text-center pb-5">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-lg-10">
                             <!-- Portfolio Modal - Title-->
                             <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{skill.name}}</h2>
                             <!-- Icon Divider-->
@@ -45,9 +45,11 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="{{skill.image.url}}" alt="..." />
+                            <img class="img-fluid rounded mb-5 modal-img" src="{{skill.image.url}}" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <hmtl>{{skill.body|safe}}</hmtl>
+                            <div class = "row modal-text justify-content-left text-left">
+                                {{skill.body|safe}}
+                            </div>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window

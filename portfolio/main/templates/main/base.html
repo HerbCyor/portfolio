@@ -9,6 +9,8 @@
         <meta name="author" content="Herbert Cardozo" />
         <link rel="canonical" href="{{request.path}}" />
         <link rel="home" href="{% url 'main:index' %}" />
+        <!-- highlight js : for displaying code in html-->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
 
         <title>Herbert Martins Cardozo - Python Software Engineer</title>
         <!-- Favicon-->
@@ -39,5 +41,7 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script> <!-- highlights for displaying code in hmtl-->
+    <script>hljs.highlightAll();</script>
     </body>
 </html>

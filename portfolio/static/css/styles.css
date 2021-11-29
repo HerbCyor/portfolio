@@ -5581,6 +5581,13 @@ textarea.form-control-lg {
   flex: 1 1 auto;
   padding: 1rem;
 }
+.modal-text{
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  align-items:left;
+  text-align: left;
+}
 
 .modal-footer {
   display: flex;
@@ -5756,6 +5763,11 @@ textarea.form-control-lg {
   .modal-fullscreen-xxl-down .modal-footer {
     border-radius: 0;
   }
+}
+
+.modal-img{
+  width:200px;
+  height:200px;
 }
 .tooltip {
   position: absolute;
@@ -11479,6 +11491,11 @@ html {
 }
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
   font-size: 1.5rem;
+}
+
+.portfolio-img{
+  width: 250px;
+  height: 250px;
 }
 
 .portfolio-modal .btn-close {
