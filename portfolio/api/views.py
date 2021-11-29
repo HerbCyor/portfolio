@@ -1,10 +1,15 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 from .serializers import SkillSerializer
 from main.models import Skill
 
 # Create your views here.
+
+
+def apiHome(request):
+    return render(request, "api/api.html")
 
 
 @api_view(["GET"])

@@ -8,4 +8,5 @@ urlpatterns = [
     path("skill-create/", views.skillCreate, name="skill-create"),
     path("skill-update/<str:pk>", views.skillUpdate, name="skill-update"),
     path("skill-delete/<str:pk>", views.SkillDelete, name="skill-delete"),
+    path("api", views.apiHome, name="apihome"),
 ]
