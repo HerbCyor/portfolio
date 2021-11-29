@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT portfolio:herbsportfolio
+web: gunicorn --bind 0.0.0.0:$PORT portfolio.wsgi
