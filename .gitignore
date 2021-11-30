@@ -33,3 +33,4 @@ pip-delete-this-directory.txt
 .env
 venv
 __pycache__
+'.env' 
